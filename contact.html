@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nature Lovers</title>
+    <meta name="description" content="Get in touch with Nature Lovers for gardening services and plant inquiries. Contact form, phone, and email information.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <i class="fas fa-leaf"></i>
+                <span>Nature Lovers</span>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="services.html" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="plants.html" class="nav__link">Buy Plants</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="register.html" class="nav__link">Register</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link active">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Contact Hero -->
+        <section class="page-hero section">
+            <div class="page-hero__container container">
+                <h1 class="page-hero__title">Contact Nature Lovers</h1>
+                <p class="page-hero__description">
+                    Have questions about our services or plants? We'd love to hear from you. Get in touch today!
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3>Get in Touch</h3>
+                        <p>We're here to help with all your gardening needs. Reach out to us through any of the following methods:</p>
+                        
+                        <div class="contact__methods">
+                            <div class="contact__method">
+                                <div class="contact__method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact__method-content">
+                                    <h4>Email Us</h4>
+                                    <p>heerasaw14@gmail.com</p>
+                                    <span>We respond within 24 hours</span>
+                                </div>
+                            </div>
+
+                            <div class="contact__method">
+                                <div class="contact__method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact__method-content">
+                                    <h4>Call Us</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                    <span>Mon-Fri: 9AM-6PM, Sat: 9AM-4PM</span>
+                                </div>
+                            </div>
+
+                            <div class="contact__method">
+                                <div class="contact__method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact__method-content">
+                                    <h4>Visit Us</h4>
+                                    <p>Your City, State 12345</p>
+                                    <span>By appointment only</span>
+                                </div>
+                            </div>
+
+                            <div class="contact__method">
+                                <div class="contact__method-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact__method-content">
+                                    <h4>Business Hours</h4>
+                                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                    <p>Saturday: 9:00 AM - 4:00 PM</p>
+                                    <p>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact__social">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Pinterest">
+                                    <i class="fab fa-pinterest"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact__form-container">
+                        <form class="contact__form" id="contactForm">
+                            <h3>Send us a Message</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                    <span class="form-error" id="firstNameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                    <span class="form-error" id="lastNameError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactEmail" class="form-label">Email Address *</label>
+                                    <input type="email" id="contactEmail" name="email" class="form-input" required>
+                                    <span class="form-error" id="contactEmailError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="contactPhone" name="phone" class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Service Quote">Service Quote Request</option>
+                                    <option value="Plant Order">Plant Order Inquiry</option>
+                                    <option value="Complaint">Complaint</option>
+                                    <option value="Feedback">Feedback</option>
+                                    <option value="Partnership">Partnership Opportunity</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="form-error" id="subjectError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">Message *</label>
+                                <textarea id="contactMessage" name="message" class="form-textarea" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                                <span class="form-error" id="contactMessageError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preferredContact" class="form-label">Preferred Contact Method</label>
+                                <div class="radio-group">
+                                    <div class="radio-item">
+                                        <input type="radio" id="prefEmail" name="preferredContact" value="Email" checked>
+                                        <label for="prefEmail">Email</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="prefPhone" name="preferredContact" value="Phone">
+                                        <label for="prefPhone">Phone</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="prefEither" name="preferredContact" value="Either">
+                                        <label for="prefEither">Either</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary btn--full" id="contactSubmitBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Success Message -->
+                        <div class="success-message" id="contactSuccessMessage" style="display: none;">
+                            <div class="success-content">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Message Sent Successfully!</h3>
+                                <p>Thank you for contacting Nature Lovers. We'll get back to you within 24 hours.</p>
+                                <button class="btn btn--secondary" onclick="resetContactForm()">Send Another Message</button>
+                            </div>
+                        </div>
+
+                        <!-- Loading Message -->
+                        <div class="loading-message" id="contactLoadingMessage" style="display: none;">
+                            <div class="loading-content">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Sending your message...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> How quickly can you start a project?</h4>
+                            <p>We typically can start most projects within 1-2 weeks of your initial consultation, depending on the season and project scope.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Do you provide free estimates?</h4>
+                            <p>Yes! We provide free, no-obligation estimates for all our services. Contact us to schedule your consultation.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> What areas do you service?</h4>
+                            <p>We service the greater metropolitan area within a 25-mile radius. Contact us to confirm if we service your location.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Are your plants guaranteed?</h4>
+                            <p>Yes, we offer a 30-day guarantee on all plants, provided they are cared for according to our instructions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Nature Lovers</span>
+                    </div>
+                    <p class="footer__description">
+                        Transforming gardens into beautiful outdoor sanctuaries with professional care and premium plants.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="plants.html">Buy Plants</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <div class="footer__contact">
+                        <p><i class="fas fa-envelope"></i> heerasaw14@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Your City, State 12345</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Nature Lovers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/email.js"></script>
+</body>
+</html>
