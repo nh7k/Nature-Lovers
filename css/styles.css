@@ -256,20 +256,21 @@ a:hover {
 }
 
 .btn--secondary {
-  background: transparent;
-  color: var(--primary-color);
+background: var(--gradient-primary);
+color: var(--white-color);
   border: 2px solid var(--primary-color);
 }
 
 .btn--secondary:hover {
   background: var(--primary-color);
   color: var(--white-color);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
 }
 
 .btn--small {
   padding: var(--spacing-sm) var(--spacing-lg);
   font-size: var(--font-size-sm);
+  color: rgb(247, 14, 14);
 }
 
 .btn--full {
@@ -362,6 +363,80 @@ a:hover {
 }
 
 /* ===== HERO SECTION ===== */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1; /* Keep text above video */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero__content {
+  color: white; /* Text over video */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Initial state for animation */
+.hero__content h1,
+.hero__content p,
+.hero__buttons a {
+  opacity: 0;
+  transform: translateY(30px);
+  animation-fill-mode: forwards;
+}
+
+/* Animation timings */
+.hero__content h1 {
+  animation: fadeSlideUp 1s ease-out 0.3s forwards;
+}
+
+.hero__content p {
+  animation: fadeSlideUp 1s ease-out 0.6s forwards;
+}
+
+.hero__buttons a:nth-child(1) {
+  animation: fadeSlideUp 1s ease-out 0.9s forwards;
+}
+
+.hero__buttons a:nth-child(2) {
+  animation: fadeSlideUp 1s ease-out 1.2s forwards;
+}
+
+/* Fade + Slide Up keyframe */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .hero {
   min-height: calc(100vh - var(--header-height));
   background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 50%, #a5d6a7 100%);
@@ -378,10 +453,8 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(46, 125, 50, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 80% 20%, rgba(102, 187, 106, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 40% 40%, rgba(129, 199, 132, 0.1) 0%, transparent 20%);
+ background: url("1.gif") center/cover no-repeat;
+    animation: bgLoop 10s linear infinite;
   animation: flowerGrowth 8s ease-in-out infinite;
 }
 
@@ -455,24 +528,106 @@ a:hover {
 
 /* ===== PAGE HERO ===== */
 .page-hero {
-  background: var(--gradient-secondary);
-  color: var(--text-color);
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   text-align: center;
-  padding: var(--spacing-3xl) 0;
+  background: url("environmental-protection-326923_1280.jpg") center/cover no-repeat; /* Add your image here */
 }
 
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* Dark overlay for better text contrast */
+  z-index: 0;
+}
+
+.page-hero__container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Initial animation state */
+.page-hero__title{
+   opacity: 0;
+  transform: scale(0.8);
+  animation-fill-mode: forwards;
+  font-size: 40px;
+}
+.page-hero__description {
+  opacity: 0;
+  transform: scale(0.8);
+  animation-fill-mode: forwards;
+  font-size: 20px;
+}
+
+/* Animation timings */
 .page-hero__title {
-  font-size: var(--font-size-4xl);
-  color: var(--text-color);
-  margin-bottom: var(--spacing-lg);
+  animation: zoomFadeIn 1s ease-out 0.3s forwards;
 }
 
 .page-hero__description {
-  font-size: var(--font-size-lg);
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto;
+  animation: zoomFadeIn 1s ease-out 0.7s forwards;
 }
+
+/* Zoom + Fade animation */
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+/* Initial state */
+.page-hero__title,
+.page-hero__description {
+  opacity: 0;
+  transform: scale(0.8);
+  color: white;
+  animation-fill-mode: forwards;
+}
+
+/* Animation timings */
+.page-hero__title {
+  animation: zoomFadeIn 1s ease-out 0.3s forwards;
+}
+
+.page-hero__description {
+  animation: zoomFadeIn 1s ease-out 0.7s forwards;
+}
+
+/* Zoom + Fade animation */
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
 
 /* ===== SECTION TITLES ===== */
 .section__title {
@@ -645,7 +800,7 @@ a:hover {
 .service-card__price {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  color: var(--primary-color);
+  color: rgb(14, 14, 240);
 }
 
 /* ===== PLANT CARDS ===== */
@@ -751,7 +906,7 @@ a:hover {
 .plant-card__price {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--primary-color);
+  color: rgba(0, 0, 0, 0.921);
 }
 
 .plant-card__price-label {
@@ -797,6 +952,9 @@ a:hover {
 .tip p {
   font-size: var(--font-size-sm);
   color: var(--text-light);
+}
+.fa-sun{
+  color: yellow;
 }
 
 /* ===== CTA SECTION ===== */
@@ -1186,6 +1344,7 @@ a:hover {
 .footer__social-link:hover {
   background: var(--secondary-color);
   transform: translateY(-2px);
+  color: var(--white-color);
 }
 
 .footer__title {

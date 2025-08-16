@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Nature Lovers</title>
+<link rel="stylesheet" href="css/styles.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Register Your Interest</h1>
+
+<form id="registerForm">
+  <div>
+    <label>Full Name *</label>
+    <input type="text" name="fullName" required autocomplete="name">
+  </div>
+
+  <div>
+    <label>Email *</label>
+    <input type="email" name="email" required autocomplete="email">
+  </div>
+
+  <div>
+    <label>Phone *</label>
+    <input type="tel" name="phone" required autocomplete="tel">
+  </div>
+
+  <div>
+    <label>Select Services/Products *</label>
+    <div>
+      <label><input type="checkbox" name="services" value="Grass Cutting"> Grass Cutting</label>
+      <label><input type="checkbox" name="services" value="Tree Work"> Tree Work</label>
+      <label><input type="checkbox" name="services" value="Planting"> Planting</label>
+      <label><input type="checkbox" name="services" value="Lawn Care"> Lawn Care</label>
+      <label><input type="checkbox" name="services" value="Hedge Cutting"> Hedge Cutting</label>
+      <label><input type="checkbox" name="services" value="Tidying Up"> Tidying Up</label>
+      <label><input type="checkbox" name="services" value="Landscaping"> Landscaping</label>
+      <label><input type="checkbox" name="services" value="Buy Plants" id="buyPlants"> Buy Plants</label>
+    </div>
+  </div>
+
+  <div id="plantPreferencesGroup" style="display: none;">
+    <label>Plant Preferences</label>
+    <div>
+      <label><input type="checkbox" name="plantTypes" value="Roses"> Premium Roses</label>
+      <label><input type="checkbox" name="plantTypes" value="Money Plant"> Money Plant</label>
+      <label><input type="checkbox" name="plantTypes" value="Indoor Plants"> Indoor Plants</label>
+      <label><input type="checkbox" name="plantTypes" value="Flowering Plants"> Flowering Plants</label>
+      <label><input type="checkbox" name="plantTypes" value="Succulents"> Succulents</label>
+      <label><input type="checkbox" name="plantTypes" value="Herbs"> Herbs</label>
+    </div>
+  </div>
+
+  <div>
+    <label>Address</label>
+    <textarea name="address" rows="3" placeholder="Your complete address"></textarea>
+  </div>
+
+  <div>
+    <label>Additional Details</label>
+    <textarea name="message" rows="4" placeholder="Additional information"></textarea>
+  </div>
+
+  <div>
+    <label>Preferred Contact Time</label>
+    <div>
+      <label><input type="radio" name="contactTime" value="Morning (9 AM - 12 PM)"> Morning</label>
+      <label><input type="radio" name="contactTime" value="Afternoon (12 PM - 5 PM)" checked> Afternoon</label>
+      <label><input type="radio" name="contactTime" value="Evening (5 PM - 8 PM)"> Evening</label>
+    </div>
+  </div>
+
+  <div>
+    <label><input type="checkbox" name="newsletter" checked> Subscribe to newsletter</label>
+  </div>
+
+  <div>
+    <label><input type="checkbox" name="terms" required> I agree to the terms *</label>
+  </div>
+
+  <button type="button" id="submitBtn">Submit Registration</button>
+</form>
+
+<script>
+const form = document.getElementById("registerForm");
+const btn = document.getElementById("submitBtn");
+
+// Show/hide plant preferences if "Buy Plants" is selected
+const buyPlantsCheckbox = document.getElementById("buyPlants");
+const plantGroup = document.getElementById("plantPreferencesGroup");
+buyPlantsCheckbox.addEventListener("change", () => {
+  plantGroup.style.display = buyPlantsCheckbox.checked ? "block" : "none";
+});
+
+btn.addEventListener("click", () => {
+  const name = form.fullName.value;
+  const email = form.email.value;
+  const phone = form.phone.value;
+
+  const services = Array.from(form.querySelectorAll('input[name="services"]:checked'))
+                        .map(cb => cb.value)
+                        .join(", ") || "None";
+
+  const plantTypes = Array.from(form.querySelectorAll('input[name="plantTypes"]:checked'))
+                          .map(cb => cb.value)
+                          .join(", ") || "None";
+
+  const address = form.address.value || "Not provided";
+  const message = form.message.value || "No message";
+  const contactTime = form.querySelector('input[name="contactTime"]:checked')?.value || "No preference";
+  const newsletter = form.newsletter.checked ? "Yes" : "No";
+
+  const bodyText = `=== CUSTOMER INFORMATION ===
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+=== SELECTED SERVICES ===
+${services}
+
+=== PLANT PREFERENCES ===
+${plantTypes}
+
+=== ADDRESS ===
+${address}
+
+=== ADDITIONAL DETAILS ===
+${message}
+
+=== PREFERENCES ===
+Contact Time: ${contactTime}
+Newsletter: ${newsletter}
+
+=== SUBMISSION INFO ===
+Date: ${new Date().toLocaleString()}
+Source: Nature Lovers Website`;
+
+  const subject = encodeURIComponent("Nature Lovers Registration");
+  const body = encodeURIComponent(bodyText);
+
+  // Temporary mailto link clicked on user gesture
+  const mailLink = document.createElement("a");
+  mailLink.href = `mailto:heerasaw14@gmail.com?subject=${subject}&body=${body}`;
+  mailLink.click();
+});
+</script>
+
+</body>
+</html>

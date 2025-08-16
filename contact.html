@@ -60,39 +60,39 @@
             <div class="contact__container container">
                 <div class="contact__content">
                     <div class="contact__info">
-                        <h3>Get in Touch</h3>
+                        <h3><b>Get in Touch</b></h3>
                         <p>We're here to help with all your gardening needs. Reach out to us through any of the following methods:</p>
                         
                         <div class="contact__methods">
                             <div class="contact__method">
                                 <div class="contact__method-icon">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-envelope" style="color: rgb(0, 21, 255);"></i>
                                 </div>
                                 <div class="contact__method-content">
                                     <h4>Email Us</h4>
-                                    <p>heerasaw14@gmail.com</p>
+                                    <p>naturelovers636@gmail.com</p>
                                     <span>We respond within 24 hours</span>
                                 </div>
                             </div>
 
                             <div class="contact__method">
                                 <div class="contact__method-icon">
-                                    <i class="fas fa-phone"></i>
+                                    <i class="fas fa-phone" style="color: #f34f21;"></i>
                                 </div>
                                 <div class="contact__method-content">
                                     <h4>Call Us</h4>
-                                    <p>+1 (555) 123-4567</p>
+                                    <p>+91 9509899906</p>
                                     <span>Mon-Fri: 9AM-6PM, Sat: 9AM-4PM</span>
                                 </div>
                             </div>
 
                             <div class="contact__method">
                                 <div class="contact__method-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i class="fas fa-map-marker-alt" style="color: #2196f3;"></i>
                                 </div>
                                 <div class="contact__method-content">
                                     <h4>Visit Us</h4>
-                                    <p>Your City, State 12345</p>
+                                    <p> House No.1,8th Floor, AARCITY D-Block,sec.9-11,Hisar</p>
                                     <span>By appointment only</span>
                                 </div>
                             </div>
@@ -293,9 +293,9 @@
                 <div class="footer__section">
                     <h3 class="footer__title">Contact Info</h3>
                     <div class="footer__contact">
-                        <p><i class="fas fa-envelope"></i> heerasaw14@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Your City, State 12345</p>
+                        <p><i class="fas fa-envelope" style="color: #2196f3;"></i> naturelovers636@gmail.com</p>
+                        <p><i class="fas fa-phone" style="color: #f34f21;"></i> +91 9509899906</p>
+                        <p><i class="fas fa-map-marker-alt" style="color: #2196f3;"></i> House No.1, 8th Floor, AARCITY D-Block,sec.9-11,Hisar</p>
                     </div>
                 </div>
             </div>
@@ -312,6 +312,48 @@
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
-    <script src="js/email.js"></script>
+ <script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const form = event.target;
+
+    // Collect all form data
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const email = form.email.value;
+    const phone = form.phone.value || "Not provided";
+    const subject = form.subject.value;
+    const message = form.message.value;
+    const preferredContact = form.preferredContact?.value || "No preference";
+
+    // Build WhatsApp message
+    const whatsappText = 
+`=== CONTACT FORM SUBMISSION ===
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+Subject: ${subject}
+
+Message:
+${message}
+
+Preferred Contact Method: ${preferredContact}
+
+Submission Date: ${new Date().toLocaleString()}
+Source: Nature Lovers Contact Page`;
+
+    // Encode message for URL
+    const encodedText = encodeURIComponent(whatsappText);
+
+    // WhatsApp number (India number with country code)
+    const waNumber = "919509899906";
+
+    // Open WhatsApp link in a new tab
+    const waLink = `https://wa.me/${waNumber}?text=${encodedText}`;
+    window.open(waLink, "_blank");
+});
+</script>
+
 </body>
 </html>

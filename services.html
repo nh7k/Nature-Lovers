@@ -45,14 +45,35 @@
     <!-- Main Content -->
     <main class="main">
         <!-- Services Hero -->
-        <section class="page-hero section">
-            <div class="page-hero__container container">
-                <h1 class="page-hero__title">Our Gardening Services</h1>
-                <p class="page-hero__description">
-                    Professional gardening services to keep your outdoor space beautiful and healthy year-round.
-                </p>
-            </div>
-        </section>
+     <section class="page-hero1 section" style="position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center;">
+    
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="page-hero__video" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+        <source src="273713_large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1;"></div>
+
+    <!-- Text Content -->
+    <div class="page-hero__container container" 
+        style="position: relative; z-index: 2; padding: 2rem; color: white; text-shadow: 0 3px 8px rgba(0,0,0,0.7); max-width: 800px;">
+        
+        <h1 class="page-hero__title" 
+            style="margin: 0 0 1rem; font-size: 2.5rem; font-weight: bold;">
+            Our Gardening Services
+        </h1>
+
+        <p class="page-hero__description" 
+            style="margin: 0 auto; font-size: 1.2rem; line-height: 1.5;">
+            Professional gardening services to keep your outdoor space beautiful and healthy year-round.
+        </p>
+    </div>
+</section>
+
+
 
         <!-- Services Grid -->
         <section class="services section" id="services">
@@ -61,13 +82,13 @@
                     <!-- Grass Cutting -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/g3bebdb7f92f2f57dccdc04fb67bbed380d25c254b8f046f82f14d6ec41f4049e92e5bf53fc6bd6460bdbc60c5be75d0666ed15aabd496201c722d1d4ef911e11_1280.jpg" alt="Professional Grass Cutting Service" loading="lazy">
+                            <img src="rose-pruning-7470829_1280.jpg" alt="Professional Grass Cutting Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-cut"></i>
                             </div>
                         </div>
                         <div class="service-card__content">
-                            <h3 class="service-card__title">Grass Cutting</h3>
+                            <h3 class="service-card__title"><b>Grass Cutting</b></h3>
                             <p class="service-card__description">
                                 Professional lawn mowing and maintenance services to keep your grass healthy and perfectly manicured. 
                                 We use quality equipment and techniques for the best results.
@@ -78,7 +99,7 @@
                                 <li><i class="fas fa-check"></i> Grass collection</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹2,500/visit</span>
+                                <span class="service-card__price">Prize ₹2,500</span>
                                 <a href="register.html" class="btn btn--small">Order Now</a>
                             </div>
                         </div>
@@ -87,13 +108,13 @@
                     <!-- Tree Work -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/g2971f6db55a2cca811d32cb256dfb2de070ebe09454e6aa9f79fc6736449f070d4d01d22b262f9f84e99078159c2280780a60d5039f5812e89651013557658ee_1280.jpg" alt="Professional Tree Work Service" loading="lazy">
+                            <img src="cutter-2396617_1280.jpg" alt="Professional Tree Work Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-tree"></i>
                             </div>
                         </div>
                         <div class="service-card__content">
-                            <h3 class="service-card__title">Tree Work</h3>
+                            <h3 class="service-card__title"><b>Tree Work</b></h3>
                             <p class="service-card__description">
                                 Expert tree care services including pruning, removal, and health assessments. 
                                 Our certified arborists ensure your trees remain healthy and safe.
@@ -104,7 +125,7 @@
                                 <li><i class="fas fa-check"></i> Health assessments</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹6,200/service</span>
+                                <span class="service-card__price">₹6,200/service</span>
                                 <a href="register.html" class="btn btn--small">Order Now</a>
                             </div>
                         </div>
@@ -113,13 +134,13 @@
                     <!-- Planting -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/g733545af7d8dc3dae6453e5fae525a05bf40caa41931bca53e9ec9e196dd04df14eb366daed300b1ee313c1cca847c87e42af47410b272754bf0a2e31f24c010_1280.jpg" alt="Professional Planting Service" loading="lazy">
+                            <img src="person-planting-plant_1025435-272.jpg" alt="Professional Planting Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-seedling"></i>
                             </div>
                         </div>
                         <div class="service-card__content">
-                            <h3 class="service-card__title">Planting</h3>
+                            <h3 class="service-card__title"><b>Planting</b></h3>
                             <p class="service-card__description">
                                 Professional planting services for flowers, shrubs, and trees. We select the right plants 
                                 for your soil and climate conditions to ensure optimal growth.
@@ -130,7 +151,7 @@
                                 <li><i class="fas fa-check"></i> Professional planting</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹4,200/service</span>
+                                <span class="service-card__price">₹4,200/service</span>
                                 <a href="register.html" class="btn btn--small">Order Now</a>
                             </div>
                         </div>
@@ -139,13 +160,13 @@
                     <!-- Lawn Care -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/ge8182a08d480813db50ba30276ff055cdd40fd9c0b0cf3a69f0f1f27aa6c57da7f0ff0007df1b45bde9e00edc1d12906f7ec37855db592d2dfd8333dd5b79fa8_1280.jpg" alt="Professional Lawn Care Service" loading="lazy">
+                            <img src="How-To-Get-Rid-Of-Spurge-In-Your-Lawn.jpg" alt="Professional Lawn Care Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-spa"></i>
                             </div>
                         </div>
                         <div class="service-card__content">
-                            <h3 class="service-card__title">Lawn Care</h3>
+                            <h3 class="service-card__title"><b>Lawn Care</b></h3>
                             <p class="service-card__description">
                                 Comprehensive lawn care including fertilization, weed control, and aeration. 
                                 Keep your lawn lush, green, and healthy throughout the seasons.
@@ -156,7 +177,7 @@
                                 <li><i class="fas fa-check"></i> Lawn aeration</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹3,300/treatment</span>
+                                <span class="service-card__price">₹3,300/treatment</span>
                                 <a href="register.html" class="btn btn--small">Order Now</a>
                             </div>
                         </div>
@@ -165,13 +186,13 @@
                     <!-- Hedge Cutting -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/g7cb9e4b2c2f2ff2487c4df48c67c23f91ff5dc55ccbee30a2193ccfaaefbea5b2404202e291a58ab9bb8fce2997e652e94e615fa8ef696a040c69b80cdfccc49_1280.jpg" alt="Professional Hedge Cutting Service" loading="lazy">
+                            <img src="bush-972972_1280.jpg" alt="Professional Hedge Cutting Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-cut"></i>
                             </div>
                         </div>
                         <div class="service-card__content">
-                            <h3 class="service-card__title">Hedge Cutting</h3>
+                            <h3 class="service-card__title"><b>Hedge Cutting</b></h3>
                             <p class="service-card__description">
                                 Professional hedge trimming and shaping services to maintain neat, attractive boundaries 
                                 and privacy screens around your property.
@@ -182,7 +203,7 @@
                                 <li><i class="fas fa-check"></i> Debris cleanup</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹2,900/service</span>
+                                <span class="service-card__price">₹2,900/service</span>
                                 <a href="register.html" class="btn btn--small">Order Now</a>
                             </div>
                         </div>
@@ -191,7 +212,7 @@
                     <!-- Tidying Up -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/g4a1dc2132271e4cd4e5d21bd61dbb488bafdbd2dcd278daf7b34d574d8f07e7a4a69042979e37156898bb0953d290d3d056daff5a2426ac985a906582f527867_1280.jpg" alt="Garden Tidying Up Service" loading="lazy">
+                            <img src="lawn-mower-938555_1280.jpg" alt="Garden Tidying Up Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-broom"></i>
                             </div>
@@ -208,7 +229,7 @@
                                 <li><i class="fas fa-check"></i> Seasonal cleanup</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹3,800/visit</span>
+                                <span class="service-card__price"> ₹3,800/visit</span>
                                 <a href="register.html" class="btn btn--small">Order Now</a>
                             </div>
                         </div>
@@ -217,7 +238,7 @@
                     <!-- Landscaping -->
                     <div class="service-card service-card--detailed">
                         <div class="service-card__image">
-                            <img src="https://pixabay.com/get/g458604d15bd223cba3af820ac1d508444ee4d254309f7e7413052324de54c3484c7cfa47157ec5dd8fd9880a9bf81a422d96bc8841bdc238deaa6ac94d4b5598_1280.jpg" alt="Professional Landscaping Service" loading="lazy">
+                            <img src="garden-5315602_1280.jpg" alt="Professional Landscaping Service" loading="lazy">
                             <div class="service-card__overlay">
                                 <i class="fas fa-mountain"></i>
                             </div>
@@ -234,8 +255,8 @@
                                 <li><i class="fas fa-check"></i> Hardscape features</li>
                             </ul>
                             <div class="service-card__footer">
-                                <span class="service-card__price">From ₹16,500/project</span>
-                                <a href="register.html" class="btn btn--small">Order Now</a>
+                                <span class="service-card__price"> ₹16,500/project</span>
+                                <a href="register.html" class="btn btn--small" >Order Now</a>
                             </div>
                         </div>
                     </div>
@@ -296,9 +317,9 @@
                 <div class="footer__section">
                     <h3 class="footer__title">Contact Info</h3>
                     <div class="footer__contact">
-                        <p><i class="fas fa-envelope"></i> heerasaw14@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Your City, State 12345</p>
+                        <p><i class="fas fa-envelope"></i> naturelovers636@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 9509899906</p>
+                        <p><i class="fas fa-map-marker-alt"></i>  House No.1, 8th Floor, AARCITY D-Block,sec.9-11,Hisar</p>
                     </div>
                 </div>
             </div>
