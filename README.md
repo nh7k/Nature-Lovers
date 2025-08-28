@@ -24,4 +24,4 @@ A beautiful and responsive website for **Nature Lovers**, offering gardening ser
 
 ## Demo
 
-You can view the deployed project  :=https://vercel.com/nh7ks-projects/nature-lovers
+You can view the deployed project  :=https://nature-lovers-ten.vercel.app/
